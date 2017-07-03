@@ -2,6 +2,9 @@ FROM php:7.1
 
 MAINTAINER robin@webstronauts.co
 
+# Allow Composer to be run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
 # Add nodesource repo to have newer node.js version installed
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
