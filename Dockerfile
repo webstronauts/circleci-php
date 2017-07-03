@@ -13,4 +13,4 @@ RUN apt-get update && apt-get install -y \
     docker-php-ext-install pdo_pgsql
 
 # Install Composer and make it available in the $PATH.
-RUN curl -sS https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer | php -- --quiet --install-dir=/usr/bin/ --filename=composer
+RUN curl -sS https://raw.githubusercontent.com/composer/getcomposer.org/f3333f3bc20ab8334f7f3dada808b8dfbfc46088/web/installer | php -- --quiet --install-dir=/usr/bin/ --filename=composer
