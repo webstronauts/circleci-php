@@ -6,7 +6,7 @@ MAINTAINER robin@webstronauts.co
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
 RUN apt-get update && apt-get install -y \
-        git libpq-dev nodejs unzip && \
+        automake git libpng-dev libpq-dev libtool nodejs unzip && \
     docker-php-ext-install pdo_pgsql
 
 # Install Composer and make it available in the $PATH.
