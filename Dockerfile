@@ -6,7 +6,7 @@ MAINTAINER robin@webstronauts.co
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Add nodesource repo to have newer node.js version installed
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
 RUN apt-get update && apt-get install -y \
         automake git libpng-dev libpq-dev libtool nodejs unzip && \
