@@ -18,7 +18,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 
 RUN apt-get update && apt-get install -y \
         automake git libpng-dev libpq-dev libtool nodejs unzip yarn && \
-    docker-php-ext-install pdo_pgsql
+    docker-php-ext-install pdo_mysql pdo_pgsql
 
 # Install Composer and make it available in the $PATH.
 RUN curl -sS https://raw.githubusercontent.com/composer/getcomposer.org/f3333f3bc20ab8334f7f3dada808b8dfbfc46088/web/installer | php -- --quiet --install-dir=/usr/bin/ --filename=composer
