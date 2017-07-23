@@ -5,9 +5,17 @@ MAINTAINER robin@webstronauts.co
 # Allow Composer to be run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+# The dockerize version to install
+ENV DOCKERIZE_VERSION v0.5.0
+
 # Install https transport (required for yarn)		
 RUN apt-get update && apt-get install -y \		
-	apt-transport-https ca-certificates
+	apt-transport-https ca-certificates wget
+
+# Add dockerize utilities
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 # Add nodesource repo to have newer Node.js version installed
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
