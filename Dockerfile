@@ -20,5 +20,8 @@ RUN apt-get update && apt-get install -y \
         automake git libpng-dev libpq-dev libtool nodejs unzip yarn && \
     docker-php-ext-install pdo_mysql pdo_pgsql
 
+# Copy ini file with CircleCI specific PHP configuration.
+COPY php.ini /usr/local/etc/php/conf.d/circleci.ini
+
 # Install Composer and make it available in the $PATH.
 RUN curl -sS https://raw.githubusercontent.com/composer/getcomposer.org/f3333f3bc20ab8334f7f3dada808b8dfbfc46088/web/installer | php -- --quiet --install-dir=/usr/bin/ --filename=composer
